@@ -4,13 +4,18 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import hr.ferit.brunozoric.taskie.R
 import hr.ferit.brunozoric.taskie.ui.fragments.AboutAppFragment
 import hr.ferit.brunozoric.taskie.ui.fragments.AboutAuthorFragment
 
-class ViewPagerAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) {
+
+
+class ViewPagerAdapter(manager: FragmentManager, context: Context): FragmentPagerAdapter(manager) {
+
+    var mContext = context
 
     override fun getItem(position: Int): Fragment {
-        val fragment = when(position){
+        var fragment = when(position){
             0 -> AboutAppFragment.newInstance()
             1 -> AboutAuthorFragment.newInstance()
             else -> AboutAppFragment.newInstance()
@@ -23,13 +28,11 @@ class ViewPagerAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) 
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        var title: String? = null
         if (position == 0) {
-            title = "About App"
+            return mContext.getString(R.string.authorTab)
         } else if (position == 1) {
-            title = "Author"
+            return mContext.getString(R.string.aboutTab)
         }
-        return title
+        return mContext.getString(R.string.authorTab)
     }
-
 }

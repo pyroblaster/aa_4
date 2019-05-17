@@ -12,6 +12,8 @@
     <string name="no_data">No data! :(</string>
     <string name="navFirst">Tasks</string>
     <string name="navSecond">About</string>
-    <string name="author">Author of this project actually created this project.</string>
-    <string name="about">This application tests your might.</string>
+    <string name="authorTab">Author</string>
+    <string name="aboutTab">About</string>
+    <string name="author">Author of this project actually created this project for Android Dev Academy Osijek.</string>
+    <string name="about">This application tests your might and also tests my Kotlin and Android skills.</string>
 </resources>
