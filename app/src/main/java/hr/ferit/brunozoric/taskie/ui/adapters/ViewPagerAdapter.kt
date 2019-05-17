@@ -1,20 +1,21 @@
 package hr.ferit.brunozoric.taskie.ui.adapters
 
+import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import hr.ferit.brunozoric.taskie.ui.fragments.AboutAppFragment
 import hr.ferit.brunozoric.taskie.ui.fragments.AboutAuthorFragment
 
-class AboutAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) {
+class ViewPagerAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) {
 
     override fun getItem(position: Int): Fragment {
-        var fragment: Fragment? = null
-        when(position){
-            0 -> fragment = AboutAppFragment()
-            1 -> fragment = AboutAuthorFragment()
+        val fragment = when(position){
+            0 -> AboutAppFragment.newInstance()
+            1 -> AboutAuthorFragment.newInstance()
+            else -> AboutAppFragment.newInstance()
         }
-        return fragment!!
+        return fragment
     }
 
     override fun getCount(): Int {
@@ -30,6 +31,5 @@ class AboutAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) {
         }
         return title
     }
-
 
 }
