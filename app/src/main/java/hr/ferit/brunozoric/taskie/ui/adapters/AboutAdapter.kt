@@ -10,10 +10,9 @@ class AboutAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) {
 
     override fun getItem(position: Int): Fragment {
         var fragment: Fragment? = null
-        if (position == 0) {
-            fragment = AboutAppFragment()
-        } else if (position == 1) {
-            fragment = AboutAuthorFragment()
+        when(position){
+            0 -> fragment = AboutAppFragment()
+            1 -> fragment = AboutAuthorFragment()
         }
         return fragment!!
     }

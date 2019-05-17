@@ -9,7 +9,7 @@ import hr.ferit.brunozoric.taskie.ui.fragments.AboutFragment
 import hr.ferit.brunozoric.taskie.ui.fragments.TasksFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity() , BottomNavigationView.OnNavigationItemSelectedListener{
+class MainActivity : BaseActivity() {
 
     override fun getLayoutResourceId() = R.layout.activity_main
 
@@ -18,16 +18,5 @@ class MainActivity : BaseActivity() , BottomNavigationView.OnNavigationItemSelec
         bottomNav.setOnNavigationItemSelectedListener(this)
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.navigation_tasks ->{
-                showFragment(R.id.fragmentContainer, TasksFragment())
-            }
-            R.id.navigation_about ->{
-                showFragment(R.id.fragmentContainer, AboutFragment())
-            }
 
-        }
-        return true
-    }
 }
